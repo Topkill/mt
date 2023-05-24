@@ -20,6 +20,8 @@ jobs:
           python-version: 3.7
       - name: 'Install requirements'
         run: pip install requests
+      - name: 'Install requirements'
+        run: pip install lxml
       - name: 'Working'
         env:
           USERNAME: ${{ secrets.USERNAME }}
