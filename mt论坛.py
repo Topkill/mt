@@ -18,13 +18,13 @@ print(response)
 response= re.sub(r'^<\?xml.*?\?>', '', response)
 html=etree.HTML(response)
 print(html)
-# loginhash=html.xpath('//form[@name="login"]/@id')[0].replace('loginform_','')
-# formhash=html.xpath('//input[@name="formhash"]/@value')[0]
-# cookitime=html.xpath('//input[@name="cookietime"]/@value')[0]
+loginhash=html.xpath('//form[@name="login"]/@id')[0].replace('loginform_','')
+formhash=html.xpath('//input[@name="formhash"]/@value')[0]
+cookitime=html.xpath('//input[@name="cookietime"]/@value')[0]
 
-loginhash = re.findall('loginhash=(.*?)">', response, re.S)[0]
-formhash = re.findall('formhash" value="(.*?)".*? />', response, re.S)[0]
-cookietime= re.findall('cookietime" value="(.*?)" .*?/>', response, re.S)[0]
+# loginhash = re.findall('loginhash=(.*?)">', response, re.S)[0]
+# formhash = re.findall('formhash" value="(.*?)".*? />', response, re.S)[0]
+# cookietime= re.findall('cookietime" value="(.*?)" .*?/>', response, re.S)[0]
 print(loginhash)
 print(formhash)
 print(cookietime)
