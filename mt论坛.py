@@ -75,7 +75,7 @@ def start():
 
     loginhash = re.findall(loginhash_ex, page_text, re.S)[0]
     formhash = re.findall(formhash_ex, page_text, re.S)[0]
-    # print(loginhash, formhash)
+    print(loginhash, formhash)
     # 模拟登陆
     login_url = 'https://bbs.binmt.cc/member.php?mod=logging&action=login&loginsubmit=yes&handlekey=login&loginhash=' + loginhash + '&inajax=1'
     data = {
@@ -88,7 +88,7 @@ def start():
         'answer': '',
     }
     page_text1 = session.post(headers=headers, url=login_url, data=data).text
-    # print(page_text1)
+    print(page_text1)
     # 验证是否登陆成功
     check_ex = 'root'
     check = re.findall(check_ex, page_text1, re.S)
